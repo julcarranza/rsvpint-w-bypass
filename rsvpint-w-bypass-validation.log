@@ -1,0 +1,113 @@
+jumpserver01:~> python rsvpint-w-bypass.py 
+usage: rsvpint-w-bypass.py [-h] [--l] [--b] [--i] device user
+rsvpint-w-bypass.py: error: too few arguments
+jumpserver01:~> python rsvpint-w-bypass.py --h
+usage: rsvpint-w-bypass.py [-h] [--l] [--b] [--i] device user
+
+Calculate the bw used by bypass lsps in a int
+
+positional arguments:
+  device      device IP address
+  user        user used to login to device
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --l         shows lsp with bypass and bw
+  --b         shows bypass with lsps protecting and total bw for it
+  --i         shows detailed output with bypass lsps in the interface
+jumpserver01:~> python rsvpint-w-bypass.py 10.92.40.67 regress
+Password: 
+interface: ae51.0 reserved: 0bps bypass_bw: 161.6Mbps total: 161.6Mbps
+interface: ae64.0 reserved: 161.6Mbps bypass_bw: 0bps total: 161.6Mbps
+jumpserver01:~> python rsvpint-w-bypass.py 10.92.40.67 regress --l
+Password: 
+core02-core03-8 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-1 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-2 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-3 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-4 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-5 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-6 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-7 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-edge01-8 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-4 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-5 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-6 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-7 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-1 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-2 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-3 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge02-7 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-6 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-5 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-4 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-3 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-2 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-1 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-8 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+interface: ae51.0 reserved: 0bps bypass_bw: 161.6Mbps total: 161.6Mbps
+interface: ae64.0 reserved: 161.6Mbps bypass_bw: 0bps total: 161.6Mbps
+jumpserver01:~> python rsvpint-w-bypass.py 10.92.40.67 regress --l --b
+Password: 
+core02-core03-8 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-1 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-2 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-3 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-4 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-5 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-6 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-7 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-edge01-8 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-4 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-5 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-6 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-7 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-1 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-2 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-3 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge02-7 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-6 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-5 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-4 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-3 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-2 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-1 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-8 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+bypass: Bypass->10.1.3.65->10.1.3.41 bw: 50000000 lsps: ['core02-edge01-5', 'core02-edge01-6', 'core02-edge01-1', 'core02-edge01-2', 'core02-edge01-3']
+bypass: Bypass->10.1.3.65->10.1.3.49 bw: 80000000 lsps: ['core02-edge02-7', 'core02-edge02-6', 'core02-edge02-5', 'core02-edge02-4', 'core02-edge02-3', 'core02-edge02-2', 'core02-edge02-1', 'core02-edge02-8']
+bypass: Bypass->10.1.3.65->10.1.3.56 bw: 30000000 lsps: ['core02-edge01-8', 'core02-edge01-4', 'core02-edge01-7']
+bypass: Bypass->10.1.3.65->10.1.3.43 bw: 1600000 lsps: ['core02-core03-8', 'core02-core03-1', 'core02-core03-2', 'core02-core03-3', 'core02-core03-4', 'core02-core03-5', 'core02-core03-6', 'core02-core03-7']
+interface: ae51.0 reserved: 0bps bypass_bw: 161.6Mbps total: 161.6Mbps
+interface: ae64.0 reserved: 161.6Mbps bypass_bw: 0bps total: 161.6Mbps
+jumpserver01:~> python rsvpint-w-bypass.py 10.92.40.67 regress --l --b --i
+Password: 
+core02-core03-8 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-1 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-2 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-3 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-4 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-5 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-6 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-core03-7 bypass name: Bypass->10.1.3.65->10.1.3.43 bandwidth: 200kbps
+core02-edge01-8 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-4 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-5 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-6 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-7 bypass name: Bypass->10.1.3.65->10.1.3.56 bandwidth: 10Mbps
+core02-edge01-1 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-2 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge01-3 bypass name: Bypass->10.1.3.65->10.1.3.41 bandwidth: 10Mbps
+core02-edge02-7 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-6 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-5 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-4 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-3 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-2 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-1 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+core02-edge02-8 bypass name: Bypass->10.1.3.65->10.1.3.49 bandwidth: 10Mbps
+bypass: Bypass->10.1.3.65->10.1.3.41 bw: 50000000 lsps: ['core02-edge01-5', 'core02-edge01-6', 'core02-edge01-1', 'core02-edge01-2', 'core02-edge01-3']
+bypass: Bypass->10.1.3.65->10.1.3.49 bw: 80000000 lsps: ['core02-edge02-7', 'core02-edge02-6', 'core02-edge02-5', 'core02-edge02-4', 'core02-edge02-3', 'core02-edge02-2', 'core02-edge02-1', 'core02-edge02-8']
+bypass: Bypass->10.1.3.65->10.1.3.56 bw: 30000000 lsps: ['core02-edge01-8', 'core02-edge01-4', 'core02-edge01-7']
+bypass: Bypass->10.1.3.65->10.1.3.43 bw: 1600000 lsps: ['core02-core03-8', 'core02-core03-1', 'core02-core03-2', 'core02-core03-3', 'core02-core03-4', 'core02-core03-5', 'core02-core03-6', 'core02-core03-7']
+interface: ae51.0 reserved: 0bps bypass_list: ['Bypass->10.1.3.65->10.1.3.49', 'Bypass->10.1.3.65->10.1.3.41', 'Bypass->10.1.3.65->10.1.3.56', 'Bypass->10.1.3.65->10.1.3.43'] bypass_bw: 161.6Mbps total: 161.6Mbps
+interface: ae64.0 reserved: 161.6Mbps bypass_list: [] bypass_bw: 0bps total: 161.6Mbps
